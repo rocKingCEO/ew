@@ -33,18 +33,19 @@ public class LoginActivity extends Activity implements View.OnClickListener {
 
             case R.id.btn_login:
 
-                doEwLogin();
+                doPostLogin();
+                doGetLogin();
                 break;
 
         }
     }
 
 
+    private void doPostLogin() {
 
-
-    private void doEwLogin() {
-
-        EwHttpClient.post("http://123.57.218.159:8080/HelWeb/LoginServlet", new LoginRequest(), new EwResponseHandler() {
+        LoginRequest loginRequest = new LoginRequest();
+        loginRequest.email = "roc@qq.com";
+        EwHttpClient.post("http://123.57.218.159:8080/HelWeb/LoginServlet", loginRequest, new EwResponseHandler() {
             @Override
             public void onFailure(int statusCode, String response, Throwable var4) {
                 Log.d("roc", "onFailure=" + statusCode + "  " + response);
@@ -56,33 +57,29 @@ public class LoginActivity extends Activity implements View.OnClickListener {
                 Log.d("roc", "statusCode=" + statusCode);
             }
 
-            @Override
-            public void onProgress(long bytesWritten, long totalSize) {
-                Log.d("rocvolley", "正在上传-" + (bytesWritten * 0.1 / totalSize));
-            }
         });
     }
 
-    private void doBaidu() {
+    private void doGetLogin() {
 
         EwRequestParams params = new EwRequestParams();
-        params.put("wd","天天向上");
+        params.put("email", "hez中国@163.com");
 
-        EwHttpClient.post("https://www.baidu.com/s?", params, new EwResponseHandler() {
+        EwHttpClient.get("http://123.57.218.159:8080/HelWeb/LoginServlet", params, new EwResponseHandler() {
             @Override
             public void onFailure(int statusCode, String response, Throwable var4) {
-                Log.d("roc", "onFailure=" + statusCode + "  " + response);
+                Log.d("roc", "get onFailure=" + statusCode + "  " + response);
             }
 
             @Override
             public void onSuccess(int statusCode, String response) {
-                Log.d("roc", "" + response);
-                Log.d("roc", "statusCode=" + statusCode);
+                Log.d("roc", "get " + response);
+                Log.d("roc", "get statusCode=" + statusCode);
             }
 
             @Override
             public void onProgress(long bytesWritten, long totalSize) {
-                Log.d("rocvolley", "正在上传-" + (bytesWritten * 0.1 / totalSize));
+                Log.d("rocvolley", "进度" + (bytesWritten * 0.1 / totalSize));
             }
         });
     }
