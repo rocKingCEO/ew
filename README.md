@@ -4,11 +4,11 @@
 
 //Post请求例子
 
-
-private void doPostLogin() {
-
+       private void doPostLogin() {
+        //参数设置
         LoginRequest loginRequest = new LoginRequest();
         loginRequest.email = "roc@qq.com";
+        //发起请求
         EwHttpClient.post("http://123.57.218.159:8080/HelWeb/LoginServlet", loginRequest, new EwResponseHandler() {
             @Override
             public void onFailure(int statusCode, String response, Throwable var4) {
@@ -28,10 +28,10 @@ private void doPostLogin() {
 
 
     private void doGetLogin() {
-
+        //参数设置
         EwRequestParams params = new EwRequestParams();
         params.put("email", "hez中国@163.com");
-
+        //发起请求
         EwHttpClient.get("http://123.57.218.159:8080/HelWeb/LoginServlet", params, new EwResponseHandler() {
             @Override
             public void onFailure(int statusCode, String response, Throwable var4) {
