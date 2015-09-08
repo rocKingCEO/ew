@@ -1,0 +1,84 @@
+package com.ew.qaa.net;
+
+
+
+import com.ew.qaa.model.BaseObject;
+
+import net.tsz.afinal.FinalHttp;
+
+/**
+ * HTTP请求
+ *
+ */
+@SuppressWarnings({ "rawtypes", "unchecked" })
+public class HttpRequest<T extends BaseObject> extends HttpResponse<String> {
+    private String url;
+    private T t;
+    private ResponseListener listener;
+
+    /**
+     * 发起GET请求
+     * 
+     * @param url
+     *            请求URL
+     * @param params
+     *            URL参数列表
+     * @param listener
+     *            请求响应监听
+     * @param t
+     *            请求数据模型对象
+     */
+    public void get(String url, HttpParams params, ResponseListener<T> listener, T t) {
+        this.url = url;
+        this.listener = listener;
+        this.t = t;
+        FinalHttp.getInstance().configTimeout(30*1000);
+        FinalHttp.getInstance().get(url, params, this);
+    }
+
+    /**
+     * 发起POST请求
+     * 
+     * @param url
+     *            请求URL
+     * @param params
+     *            URL参数列表
+     * @param listener
+     *            请求响应监听
+     * @param t
+     *            请求数据模型对象
+     */
+    public void post(String url, HttpParams params, ResponseListener<T> listener, T t) {
+
+        this.listener = listener;
+        this.t = t;
+        this.url = url;
+
+        /** 禁用Cookie 服务器会判断非法Cookie参数 并且我们也没有用到Cookie，因此清空 */
+        // AbstractHttpClient httpClient = (AbstractHttpClient)
+        // FinalHttp.getInstance().getHttpClient();
+        // httpClient.getCookieStore().clear();
+        FinalHttp.getInstance().configTimeout(30*1000);
+        FinalHttp.getInstance().post(url, params, this);
+    }
+
+    @Override
+    public void onSuccess(String string) {
+        super.onSuccess(string);
+        t.parse(string);
+        /* 合法数据 */
+        listener.onSuccess(t);
+
+
+    }
+
+    @Override
+    public void onFailure(Throwable throwable, int errorNo, String strMsg) {
+        super.onFailure(throwable, errorNo, strMsg);
+
+        if (listener == null)
+            return;
+        listener.onFail(errorNo, strMsg);
+
+    }
+}

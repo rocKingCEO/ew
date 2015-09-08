@@ -1,0 +1,13 @@
+package com.ew.qaa.model;
+
+/**
+ * Created by WangYuPeng on 9/3/15.
+ */
+public class BaseResponse {
+    /**
+     * @see  com.ew.qaa.model.ResponseCode
+     */
+    public int code;//状态码;
+    public String msg;//状态信息
+
+}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/c_black_000000" >
+
+
+
+    <TextView
+        android:id="@+id/take_photo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_centerInParent="true"
+        android:text="提问拍照"
+        android:padding="15dp"
+        android:textColor="@color/c_orange_ff8901"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+</RelativeLayout>

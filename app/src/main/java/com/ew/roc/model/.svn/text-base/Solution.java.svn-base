@@ -1,0 +1,17 @@
+package com.ew.qaa.model;
+
+/**
+ * Created by roc on 9/3/15.
+ */
+public class Solution {
+    public String _id;//回答标示id
+    public String qid;//问题标示id
+    public int time;//答案发布时间
+    public String des;//答案描述
+    public String pic;//答案图片
+    public String voice;//答案录音
+    public String video;//答案视频
+    public int userId;//回答者者用户id
+    public String userName;//回答用户昵称
+    public int quality;//回答质量或是否被提问者采用（优良中差）
+}

@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 31
+/svn/QaaAndroid/!svn/ver/12/qaa
+END
+gradlew
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/QaaAndroid/!svn/ver/1/qaa/gradlew
+END
+settings.gradle
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/QaaAndroid/!svn/ver/1/qaa/settings.gradle
+END
+.gitignore
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/QaaAndroid/!svn/ver/1/qaa/.gitignore
+END
+local.properties
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/QaaAndroid/!svn/ver/1/qaa/local.properties
+END
+gradlew.bat
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/QaaAndroid/!svn/ver/1/qaa/gradlew.bat
+END
+build.gradle
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/QaaAndroid/!svn/ver/1/qaa/build.gradle
+END
+gradle.properties
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/QaaAndroid/!svn/ver/1/qaa/gradle.properties
+END
+qaa.iml
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/QaaAndroid/!svn/ver/1/qaa/qaa.iml
+END

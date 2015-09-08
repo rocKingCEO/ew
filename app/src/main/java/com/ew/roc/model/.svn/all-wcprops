@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/QaaAndroid/!svn/ver/10/qaa/app/src/main/java/com/ew/qaa/model
+END
+BaseObject.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/QaaAndroid/!svn/ver/14/qaa/app/src/main/java/com/ew/qaa/model/BaseObject.java
+END
+Problem.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/QaaAndroid/!svn/ver/7/qaa/app/src/main/java/com/ew/qaa/model/Problem.java
+END
+HeadRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/QaaAndroid/!svn/ver/10/qaa/app/src/main/java/com/ew/qaa/model/HeadRequest.java
+END
+ResponseCode.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/QaaAndroid/!svn/ver/8/qaa/app/src/main/java/com/ew/qaa/model/ResponseCode.java
+END
+RegisterRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/QaaAndroid/!svn/ver/14/qaa/app/src/main/java/com/ew/qaa/model/RegisterRequest.java
+END
+User.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/QaaAndroid/!svn/ver/9/qaa/app/src/main/java/com/ew/qaa/model/User.java
+END
+LoginResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/QaaAndroid/!svn/ver/14/qaa/app/src/main/java/com/ew/qaa/model/LoginResponse.java
+END
+Solution.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/QaaAndroid/!svn/ver/7/qaa/app/src/main/java/com/ew/qaa/model/Solution.java
+END
+LoginRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/QaaAndroid/!svn/ver/14/qaa/app/src/main/java/com/ew/qaa/model/LoginRequest.java
+END
+OtherLoginRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/QaaAndroid/!svn/ver/9/qaa/app/src/main/java/com/ew/qaa/model/OtherLoginRequest.java
+END
+UpdateRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/QaaAndroid/!svn/ver/9/qaa/app/src/main/java/com/ew/qaa/model/UpdateRequest.java
+END
+RegisterResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/QaaAndroid/!svn/ver/9/qaa/app/src/main/java/com/ew/qaa/model/RegisterResponse.java
+END
+BaseResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/QaaAndroid/!svn/ver/8/qaa/app/src/main/java/com/ew/qaa/model/BaseResponse.java
+END

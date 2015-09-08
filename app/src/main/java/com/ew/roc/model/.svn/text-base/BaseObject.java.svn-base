@@ -1,0 +1,97 @@
+package com.ew.qaa.model;
+
+
+import org.json.JSONObject;
+
+import java.io.Serializable;
+
+/**
+ * 所以数据模型的基类
+ * 
+ * @author WangZengYang
+ * @since 2013-7-12
+ */
+@SuppressWarnings("serial")
+public class BaseObject implements Serializable, Cloneable {
+    public int errno = -1;
+    public String errmsg;
+
+    private Throwable throwable;
+
+    public void setThrowable(Throwable throwable) {
+        this.throwable = throwable;
+    }
+
+    public Throwable getThrowable() {
+        return this.throwable;
+    }
+
+    /**
+     * 获取错误码
+     * 
+     * @return 错误码
+     */
+    public int getErrorCode() {
+        return errno;
+    }
+
+
+
+
+    /**
+     * 解析json数据
+     * 
+     * @param json
+     */
+    public void parse(String json) {
+
+        JSONObject obj;
+        try {
+            obj = new JSONObject(json);
+        } catch (Exception e) {
+            return;
+        }
+        parse(obj);
+    }
+
+    /**
+     * 解析数据对象<br/>
+     * 由子类实现
+     * 
+     * @param obj
+     */
+    protected void parse(JSONObject obj) {
+        // to do nothing.
+    }
+
+    @Override
+    public String toString() {
+        return "BaseObject [errno=" + errno + ", errmsg=" + errmsg + "]";
+    }
+
+    @Override
+    public BaseObject clone() {
+        BaseObject obj = null;
+        try {
+            obj = (BaseObject) super.clone();
+        } catch (CloneNotSupportedException e) {
+            e.printStackTrace();
+        }
+        return obj;
+    }
+
+
+    public static BaseObject valueOf(Object obj) {
+        if (obj == null)
+            return null;
+        BaseObject result = null;
+        try {
+            result = (BaseObject) obj;
+        } catch (ClassCastException e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
+
+
+}

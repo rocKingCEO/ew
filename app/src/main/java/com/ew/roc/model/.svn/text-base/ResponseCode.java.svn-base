@@ -1,0 +1,60 @@
+package com.ew.qaa.model;
+
+/**
+ * Created by WangYuPeng on 9/3/15.
+ */
+public class ResponseCode {
+
+    /** 小于0为本地使用的状态码*/
+    /** 解析错误 - 服务器上没有此code，只有本地存在*/
+    public static final int ResponseAnalyzeError = -2;
+    /** 网络不可达 - 服务器上没有此code，只有本地存在*/
+    public static final int ResponseNetworkError = -1;
+
+    /** 请求正常*/
+    public static final int ResponseOK = 0;
+
+    /** 1-200为预留的状态码*/
+    /** 200以后为和服务器约定的错误码*/
+
+    /** 校验失败-被系统的校验机制拒绝*/
+    public static final int ResponseVerifyError = 201;
+    /** 参数请求方式错误 仅仅限于POST GET这种方式错误*/
+    public static final int ResponseMethodError = 202;
+    /** 缺少参数*/
+    public static final int ResponseParametersMissing = 203;
+    /** 参数不符合规范*/
+    public static final int ResponseParametersInvalid = 204;
+    /** 查询的用户不存在*/
+    public static final int ResponseUserNotExist = 205;
+    /** 用户密码错误*/
+    public static final int ResponsePasswordError = 206;
+    /** 用户不存在或者密码错误*/
+    public static final int ResponseUserNotExistOrPasswordError = 207;
+    /** 注册时用户已经存在*/
+    public static final int ResponseUserAlreadyExist = 208;
+    /** 系统异常，由try except抛出*/
+    public static final int ResponseExceptionError = 209;
+    /** 重复操作，比如说已经订阅了，再次点击订阅，再比如已经收藏和还点击收藏*/
+    public static final int ResponseRepeatOperation = 210;
+    /** 系统升级，稍后访问*/
+    public static final int ResponseSystemUpgrade = 211;
+    /** 服务器停止服务，请升级新版本*/
+    public static final int ResponseServerDisable  = 212;
+    /** 操作超时了*/
+    public static final int ResponseVerifyCodeTimeout = 213;
+    /** 验证码错误，此处特指邮箱，手机等验证错误，和ResponseVerifyError区分*/
+    public static final int ResponseVerifyCodeError = 214;
+    /** 要操作的对象不存在，比如文章，站点不存在，用户不存在是一个比较特殊的，所以区分开来*/
+    public static final int ResponseObjectNotExist  = 215;
+    /** 强制退出该用户登录*/
+    public static final int ResponseSignout = 216;
+    /** 需要用户登录，情况是之前没有登录*/
+    public static final int ResponseNeedLogin = 217;
+    /** token验证失败，重新登录获取*/
+    public static final int ResponseTokenError = 218;
+    /** 操作太频繁*/
+    public static final int ResponseOpFreqHigh = 219;
+    /** 无权限，无法操作*/
+    public static final int ResponseOpNoPermission   = 220;
+}

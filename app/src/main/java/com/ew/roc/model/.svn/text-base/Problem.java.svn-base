@@ -1,0 +1,23 @@
+package com.ew.qaa.model;
+
+/**
+ * Created by roc on 9/3/15.
+ */
+public class Problem {
+
+    public String _id;//问题标示id
+    public int time;//问题发布时间
+    public String title;//问题标题
+    public String des;//问题描述
+    public String pic;//问题图片
+    public String voice;//问题声音
+    public String video;//问题视频
+    public int channel;//标示行业类型
+    public int type;//问题主分类
+    public int stype;//问题子分类
+    public int userId;//提问者用户id
+    public int userName;//提问用户昵称
+    public int count;//回答个数
+    public int askMoney;//提问者支付金币数
+    public int platformMoney;//平台动态奖励金币数
+}

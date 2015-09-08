@@ -1,0 +1,114 @@
+package com.ew.qaa;
+
+
+import android.app.Fragment;
+import android.os.Bundle;
+import android.os.Handler;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+import com.ew.qaa.answer.MessageAdapter;
+import com.ew.qaa.model.Problem;
+import com.ew.qaa.ui.xlist.XListView;
+
+import java.util.ArrayList;
+
+public class Tab1BodyFragment extends Fragment implements XListView.IXListViewListener {
+
+    private final String TAG="XListViewActivity";
+    private XListView mListView;
+    private MessageAdapter mAdapter;
+    private ArrayList<Problem> items = new ArrayList<Problem>();
+    private Handler mHandler;
+    private int start = 0;
+    private static int refreshCnt = 0;
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_tab_1_body, container, false);
+        mListView = (XListView) view.findViewById(R.id.list);
+        mListView.setPullLoadEnable(true);
+        initItems();
+        mAdapter = new MessageAdapter(getActivity(), R.layout.list_item, items);
+        mListView.setAdapter(mAdapter);
+        mListView.setXListViewListener(this);
+        mHandler = new Handler();
+        return view;
+    }
+
+
+
+    private void initItems(){
+        items.clear();
+        Problem m1=new Problem();
+        Problem m2=new Problem();
+        Problem m3=new Problem();
+        m1.pic = "http://img.taopic.com/uploads/allimg/110311/6352-11031113401773.jpg";
+        m2.pic = "http://img.taopic.com/uploads/allimg/120225/101-12022516222249.jpg";
+        m3.pic = "http://img.taopic.com/uploads/allimg/140117/235101-14011FZ55221.jpg";
+        items.add(m1);
+        items.add(m2);
+        items.add(m3);
+    }
+
+    private void initItem2(){
+        Problem m1=new Problem();
+
+        m1.pic = "http://img.taopic.com/uploads/allimg/110311/6352-11031113401773.jpg";
+        items.add(0,m1);
+
+
+    }
+
+    private void initItem3(){
+
+        Problem m2=new Problem();
+
+        m2.pic = "http://img.taopic.com/uploads/allimg/120225/101-12022516222249.jpg";
+
+
+        items.add(m2);
+
+    }
+
+
+    private void geneItems() {
+        initItems();
+    }
+
+    private void onLoad() {
+        mListView.stopRefresh();
+        mListView.stopLoadMore();
+        mListView.setRefreshTime("刚刚");
+    }
+
+    @Override
+    public void onRefresh() {
+        Log.i(TAG, "刷新最新");
+        mHandler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                initItem2();
+                mAdapter.notifyDataSetChanged();
+                onLoad();
+            }
+        }, 1000);
+    }
+
+    @Override
+    public void onLoadMore() {
+        Log.i(TAG, "加载更多");
+        mHandler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                initItem3();
+                mAdapter.notifyDataSetChanged();
+                onLoad();
+            }
+        }, 1000);
+    }
+
+}

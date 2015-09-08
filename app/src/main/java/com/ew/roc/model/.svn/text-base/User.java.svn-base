@@ -1,0 +1,44 @@
+package com.ew.qaa.model;
+
+import android.content.Intent;
+
+import java.util.ArrayList;
+
+/**
+ * Created by roc on 9/3/15.
+ */
+public class User {
+
+    public String _id;//账户id
+    public int askCnt;//提问问题数
+    public int answerCnt;//回答问题数
+    public int money;//积分（1000积分=10元）
+    public int vipLevel;//vip等级（普通，高级，钻石，皇冠）
+    public int level;//等级（1，2，3，，，）
+    public int levelPercent;//这一级距下一等级的百分比（1，2，3，，，）%
+    public int honesty;//等级（1，2，3，，，）
+    public int honestyPercent;//这一级距下一等级的百分比（1，2，3，，，）%
+
+    public String type;//账户类型
+    public String nick;//用户昵称
+    public String age;//用户年龄
+    public String birthday;//用户生日 1970时间
+    public String sex;//性别 YES男
+
+    public String email;//邮箱
+    public String phone;//电话
+    public String sign;//签名
+    public String headurl;//头像
+    public String headMaskUrl;//头像的头冠（vip标记或其他花冠）
+    public String headBigUrl;//高清头像
+    public String website;//个人网站
+
+
+    public String qq;//qq号
+    public String address;//address地址
+    public int regtime;//注册时间
+    public String session;//会话Id
+    public String deviceToken;//设备id
+    public ArrayList<Integer> channel;//此人擅长的领域（数学，语文）【array】
+
+}

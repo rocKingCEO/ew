@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+    <SurfaceView android:id="@+id/camera"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"/>
+
+
+    <TextView
+        android:id="@+id/tv_camera_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="取消"
+        android:textSize="20dp"
+        android:padding="10dp"
+        android:layout_alignParentRight="true"
+        android:textColor="@color/c_orange_ff8901"/>
+
+    <TextView
+        android:id="@+id/tv_camera_submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="提交"
+        android:textSize="20dp"
+        android:padding="10dp"
+        android:visibility="gone"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:textColor="@color/c_orange_ff8901"/>
+
+
+    <ImageView
+        android:id="@+id/iv_ref_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_centerVertical="true"
+        android:background="@color/c_orange_ff8901"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="水平线"
+        android:textSize="15dp"
+        android:layout_marginLeft="10dp"
+        android:layout_above="@+id/iv_ref_line"
+        android:textColor="@color/c_orange_ff8901"/>
+</RelativeLayout>

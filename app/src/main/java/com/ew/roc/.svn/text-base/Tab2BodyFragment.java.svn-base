@@ -1,0 +1,52 @@
+package com.ew.qaa;
+
+
+import android.app.Fragment;
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
+
+import com.ew.qaa.ui.xlist.XListView;
+
+public class Tab2BodyFragment extends Fragment {
+    private WebView mWebView;
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_tab_2_body, container, false);
+        mWebView = (WebView) view.findViewById(R.id.webView);
+        mWebView.getSettings().setCacheMode(WebSettings.LOAD_DEFAULT);
+        mWebView.getSettings().setJavaScriptEnabled(true);
+        mWebView.getSettings().setDefaultTextEncodingName("utf-8");
+        mWebView.getSettings().setRenderPriority(WebSettings.RenderPriority.HIGH);
+        mWebView.loadUrl("http://123.57.218.159/mf_b/jf/");
+        mWebView.requestFocus();
+        mWebView.setWebViewClient(new WebViewClient());
+
+        return view;
+
+    }
+
+
+    public boolean isNetworkConnected(Context context) {
+        if (context != null) {
+            ConnectivityManager mConnectivityManager = (ConnectivityManager) context
+                    .getSystemService(Context.CONNECTIVITY_SERVICE);
+            NetworkInfo mNetworkInfo = mConnectivityManager.getActiveNetworkInfo();
+            if (mNetworkInfo != null) {
+                return mNetworkInfo.isAvailable();
+            }
+        }
+        return false;
+    }
+
+
+}

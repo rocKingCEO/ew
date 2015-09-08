@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svn/QaaAndroid/!svn/ver/12/qaa/app
+END
+proguard-rules.pro
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/QaaAndroid/!svn/ver/1/qaa/app/proguard-rules.pro
+END
+.gitignore
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/QaaAndroid/!svn/ver/1/qaa/app/.gitignore
+END
+build.gradle
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/QaaAndroid/!svn/ver/6/qaa/app/build.gradle
+END
+app.iml
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/QaaAndroid/!svn/ver/1/qaa/app/app.iml
+END

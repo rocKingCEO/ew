@@ -1,0 +1,35 @@
+package com.ew.qaa.net;
+
+
+import com.ew.qaa.model.BaseObject;
+
+/**
+ * 网络请求响应类
+ * 
+ * @author wangzengyang@gmail.com
+ * @since 2013-9-12
+ */
+abstract public class ResponseListener<T extends BaseObject> {
+
+    /**
+     * 请求成功且返回合法数据
+     * 
+     * @param t
+     */
+    public void onSuccess(T t) {
+    }
+
+
+
+    /**
+     * 
+     * 请求网络失败，是指ResponseCode，即 200、404、502等
+     * 
+     *
+     */
+    public void onFail(int errorNo, String strMsg) {
+    }
+
+
+
+}

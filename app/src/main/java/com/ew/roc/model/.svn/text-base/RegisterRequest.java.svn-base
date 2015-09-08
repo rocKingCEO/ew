@@ -1,0 +1,25 @@
+package com.ew.qaa.model;
+
+
+/**
+ * Created by WangYuPeng on 9/5/15.
+ */
+public class RegisterRequest {
+    /**
+     * 电子邮箱
+     */
+    public String email;
+    /**
+     * md5密码
+     */
+    public String pw;
+    /**
+     * 邮件验证码
+     */
+    public String code;
+    /**
+     * 设备token，推送需要, 可不传
+     */
+    public String token;
+
+}

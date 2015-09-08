@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/QaaAndroid/!svn/ver/14/qaa/app/src/main/java/com/ew/qaa/net
+END
+HttpParams.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/QaaAndroid/!svn/ver/14/qaa/app/src/main/java/com/ew/qaa/net/HttpParams.java
+END
+HttpResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/QaaAndroid/!svn/ver/14/qaa/app/src/main/java/com/ew/qaa/net/HttpResponse.java
+END
+HttpRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/QaaAndroid/!svn/ver/14/qaa/app/src/main/java/com/ew/qaa/net/HttpRequest.java
+END
+ResponseListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/QaaAndroid/!svn/ver/14/qaa/app/src/main/java/com/ew/qaa/net/ResponseListener.java
+END
+DoRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/QaaAndroid/!svn/ver/14/qaa/app/src/main/java/com/ew/qaa/net/DoRequest.java
+END

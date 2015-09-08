@@ -1,0 +1,22 @@
+package com.ew.qaa.model;
+
+/**
+ * Created by WangYuPeng on 9/5/15.
+ */
+public class HeadRequest {
+    /**
+     * 用户id
+     */
+    public String uid;
+
+    /**
+     * 用户session id
+     */
+    public String token;
+
+    /**
+     * image数据
+     */
+    public byte[] ImageFile ;
+
+}

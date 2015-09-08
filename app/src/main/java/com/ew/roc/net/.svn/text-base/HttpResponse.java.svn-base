@@ -1,0 +1,20 @@
+package com.ew.qaa.net;
+
+import net.tsz.afinal.http.AjaxCallBack;
+
+/**
+ * 网络响应
+ *
+ */
+abstract public class HttpResponse<R> extends AjaxCallBack<R> {
+
+    @Override
+    final public void onLoading(long count, long current) {
+        // TODO nothing.
+    }
+
+    @Override
+    final public void onStart() {
+        // TODO nothing.
+    }
+}

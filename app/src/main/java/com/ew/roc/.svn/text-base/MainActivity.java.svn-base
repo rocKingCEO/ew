@@ -1,0 +1,109 @@
+package com.ew.qaa;
+
+
+import android.app.Activity;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.Window;
+import android.widget.LinearLayout;
+
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.ImageLoader;
+import com.android.volley.toolbox.Volley;
+import com.ew.qaa.answer.BitmapCache;
+
+public class MainActivity extends Activity implements OnClickListener {
+    private static RequestQueue mRequestQueue;
+    private static ImageLoader mImageLoader;
+    private LinearLayout mLltTab0;
+    private LinearLayout mLltTab1;
+    private LinearLayout mLltTab2;
+    private LinearLayout mLltTab3;
+
+    private Tab0BodyFragment mFrgmtTab0Body;
+    private Tab1BodyFragment mFrgmtTab1Body;
+    private Tab2BodyFragment mFrgmtTab2Body;
+    private Tab3BodyFragment mFrgmtTab3Body;
+
+    public static RequestQueue getRequestQueue(){
+        return mRequestQueue;
+    }
+
+    public static ImageLoader getImageLoader(){
+        return  mImageLoader;
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        setContentView(R.layout.activity_main);
+
+        // 初始化控件和声明事件
+        mLltTab0 = (LinearLayout) findViewById(R.id.llt_bottom_bar_tab_0);
+        mLltTab1 = (LinearLayout) findViewById(R.id.llt_bottom_bar_tab_1);
+        mLltTab2 = (LinearLayout) findViewById(R.id.llt_bottom_bar_tab_2);
+        mLltTab3 = (LinearLayout) findViewById(R.id.llt_bottom_bar_tab_3);
+        mLltTab0.setOnClickListener(this);
+        mLltTab1.setOnClickListener(this);
+        mLltTab2.setOnClickListener(this);
+        mLltTab3.setOnClickListener(this);
+
+        // 设置默认的Fragment
+        setDefaultFragment();
+        mRequestQueue = Volley.newRequestQueue(this);
+        mImageLoader = new ImageLoader(mRequestQueue, new BitmapCache());
+    }
+
+    private void setDefaultFragment() {
+        FragmentManager fm = getFragmentManager();
+        FragmentTransaction transaction = fm.beginTransaction();
+        mFrgmtTab0Body = new Tab0BodyFragment();
+        transaction.replace(R.id.id_content, mFrgmtTab0Body);
+        transaction.commit();
+    }
+
+    @Override
+    public void onClick(View v) {
+        FragmentManager fm = getFragmentManager();
+        // 开启Fragment事务
+        FragmentTransaction transaction = fm.beginTransaction();
+
+        switch (v.getId()) {
+            case R.id.llt_bottom_bar_tab_0:
+                if (mFrgmtTab0Body == null) {
+                    mFrgmtTab0Body = new Tab0BodyFragment();
+                }
+                // 使用当前Fragment的布局替代id_content的控件
+                transaction.replace(R.id.id_content, mFrgmtTab0Body);
+                break;
+            case R.id.llt_bottom_bar_tab_1:
+                if (mFrgmtTab1Body == null) {
+                    mFrgmtTab1Body = new Tab1BodyFragment();
+                }
+                transaction.replace(R.id.id_content, mFrgmtTab1Body);
+                break;
+            case R.id.llt_bottom_bar_tab_2:
+                if (mFrgmtTab2Body == null) {
+                    mFrgmtTab2Body = new Tab2BodyFragment();
+                }
+                // 使用当前Fragment的布局替代id_content的控件
+                transaction.replace(R.id.id_content, mFrgmtTab2Body);
+                break;
+            case R.id.llt_bottom_bar_tab_3:
+                if (mFrgmtTab3Body == null) {
+                    mFrgmtTab3Body = new Tab3BodyFragment();
+                }
+                transaction.replace(R.id.id_content, mFrgmtTab3Body);
+                break;
+        }
+
+        // 事务提交
+        transaction.commit();
+    }
+
+}
+

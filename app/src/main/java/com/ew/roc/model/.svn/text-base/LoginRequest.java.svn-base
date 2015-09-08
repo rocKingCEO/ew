@@ -1,0 +1,40 @@
+package com.ew.qaa.model;
+
+import com.ew.qaa.config.HttpUrl;
+import com.ew.qaa.net.DoRequest;
+import com.ew.qaa.net.HttpParams;
+import com.ew.qaa.net.HttpRequest;
+import com.ew.qaa.net.ResponseListener;
+
+/**
+ * Created by WangYuPeng on 9/5/15.
+ */
+public class LoginRequest implements DoRequest<LoginResponse> {
+    /**
+     * 电子邮箱
+     */
+    public String email;
+    /**
+     * md5密码
+     */
+    public String pw;
+    /**
+     * 账户类型:0 标示正常账户 1 标示新浪微博账户 2 标示qq账户 3 标示微信账户
+     */
+    public String type;
+    /**
+     * 设备token，推送需要, 可不传
+     */
+    public String token;
+
+
+    @Override
+    public void doRequest(ResponseListener<LoginResponse> listener) {
+        HttpParams params = new HttpParams();
+        params.put("email", email);
+        params.put("pw", pw);
+        params.put("type", type);
+        params.put("token", token);
+        new HttpRequest<LoginResponse>().post(HttpUrl.LOGIN, params, listener, new LoginResponse());
+    }
+}

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/c_black_000000" >
+
+    <com.android.volley.toolbox.NetworkImageView
+        android:id="@+id/niv_question"
+        android:layout_width="match_parent"
+        android:layout_height="203dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/app_name"
+        android:scaleType="centerInside" />
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15dp"
+        android:padding="20dp"
+        android:text="拍照回答"
+        android:textColor="@color/c_orange_ff8901"
+        android:layout_alignParentBottom="true"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15dp"
+        android:padding="20dp"
+        android:text="文本回答"
+        android:layout_alignParentRight="true"
+        android:textColor="@color/c_orange_ff8901"
+        android:layout_alignParentBottom="true"/>
+
+
+</RelativeLayout>

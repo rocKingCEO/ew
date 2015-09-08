@@ -1,0 +1,28 @@
+package com.ew.qaa.model;
+
+/**
+ * Created by WangYuPeng on 9/5/15.
+ */
+public class UpdateRequest {
+
+    /**用户id*/
+    public String uid ;
+    /**账户session id*/
+    public String token ;
+    //以下参数必须有且至少有一个，这些参数的更新后台做了一些限制，比如qq必须是纯数字，否则提示参数不合法;
+    /**昵称*/
+    public String nick ;
+    /**性别  1男 0女*/
+    public String sex  ;
+    /**电话*/
+    public String phone ;
+    /**签名*/
+    public String sign ;
+    /**个人主页*/
+    public String website ;
+    /**个人qq*/
+    public String qq ;
+    /**生日 1970时间*/
+    public String birthday ;
+
+}

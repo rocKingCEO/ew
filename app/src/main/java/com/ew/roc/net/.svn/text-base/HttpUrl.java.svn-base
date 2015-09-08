@@ -1,0 +1,45 @@
+package com.ew.qaa.config;
+
+/**
+ * Created by WangYuPeng on 9/6/15.
+ */
+public class HttpUrl {
+
+    public static final String BASE_URL = "";
+
+    /**
+     * 用户注册【POST】
+     */
+    public static final String REGISTER = BASE_URL + "/user?=register";
+
+    /**
+     * 用户登录【POST】
+     */
+    public static final String LOGIN = BASE_URL + "/user?=login";
+
+    /**
+     * 第三方平台登录【POST】
+     */
+    public static final String OTHERLOGIN = BASE_URL + "/user?=otherlogin";
+
+    /**
+     * 更新用户信息【POST】
+     */
+    public static final String UPDATE = BASE_URL + "/user?=update";
+
+    /**
+     * 上传头像【POST】
+     */
+    public static final String HEAD = BASE_URL + "/user?=head";
+
+    /**
+     * 发送邮箱验证码
+     */
+    public static final String EMAIL = BASE_URL + "user?=email";
+
+    /**
+     * 重置密码
+     */
+    public static final String PASSWORD = BASE_URL + "user?=password";
+
+}

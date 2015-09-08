@@ -1,0 +1,9 @@
+package com.ew.qaa.model;
+
+/**
+ * Created by WangYuPeng on 9/5/15.
+ */
+public class RegisterResponse extends BaseResponse{
+
+
+}

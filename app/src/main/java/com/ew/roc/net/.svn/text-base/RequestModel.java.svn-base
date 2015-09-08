@@ -1,0 +1,11 @@
+package com.ew.qaa.net;
+
+import com.ew.qaa.model.BaseObject;
+
+/**
+ * 网络响应
+ *
+ */
+public interface DoRequest<T extends BaseObject>{
+    void doRequest(ResponseListener<T> listener);
+}

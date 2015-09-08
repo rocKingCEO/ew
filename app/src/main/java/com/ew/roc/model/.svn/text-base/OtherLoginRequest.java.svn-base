@@ -1,0 +1,42 @@
+package com.ew.qaa.model;
+
+/**
+ * Created by WangYuPeng on 9/5/15.
+ */
+public class OtherLoginRequest {
+
+    /**
+     * 账户类型:0 标示正常账户 1 标示新浪微博账户 2 标示qq账户 3 标示微信账户
+     */
+    public String type;
+    /**
+     * 设备token，推送需要, 可不传
+     */
+    public String token;
+    /**
+     * 平台对应的账户唯一id
+     */
+    public String usid;
+    /**
+     * 账户token
+     */
+    public String accesstoken;
+    /**
+     * 账户过期时间
+     */
+    public String expirationdate;
+    /**
+     * 账户头像
+     */
+    public String iconurl;
+    /**
+     * 账户个人主页
+     */
+    public String profile;
+    /**
+     * 账户昵称
+     */
+    public String nick;
+
+
+}
