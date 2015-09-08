@@ -3,6 +3,8 @@
 
 
 //Post请求例子
+
+
 private void doPostLogin() {
 
         LoginRequest loginRequest = new LoginRequest();
@@ -23,6 +25,8 @@ private void doPostLogin() {
     }
 
 //Get请求例子
+
+
     private void doGetLogin() {
 
         EwRequestParams params = new EwRequestParams();
