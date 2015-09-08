@@ -7,19 +7,17 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- *
  * RequestParams params = new RequestParams();
  * params.put("username", "james");
  * params.put("password", "123456");
  * params.put("profile_picture", new File("pic.jpg")); // Upload a File
  * params.put("profile_picture2", someInputStream); // Upload an InputStream
  * params.put("profile_picture3", new ByteArrayInputStream(someBytes)); // Upload some bytes
- *
+ * <p/>
  * Map&lt;String, String&gt; map = new HashMap&lt;String, String&gt;();
  * map.put("first_name", "James");
  * map.put("last_name", "Smith");
  * params.put("user", map); // url params: "user[first_name]=James&amp;user[last_name]=Smith"
- *
  */
 public class EwRequestParams extends RequestParams {
 
@@ -29,6 +27,18 @@ public class EwRequestParams extends RequestParams {
      */
     public EwRequestParams(Object object) {
         super(ConvertObjToMap(object));
+    }
+
+    public EwRequestParams() {
+        super();
+    }
+
+    public EwRequestParams(final String key, final String value) {
+        super(key, value);
+    }
+
+    public EwRequestParams(Map<String, String> source) {
+        super(source);
     }
 
 

@@ -7,7 +7,7 @@ public class LoginRequest  {
     /**
      * 电子邮箱
      */
-    public String email = "rocEmail@163.com";
+    public String email  ;
     /**
      * md5密码
      */
